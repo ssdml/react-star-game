@@ -1,0 +1,50 @@
+.game-field {
+    width: 600px;
+    height: 600px;
+}
+
+.game-field__star {
+    box-sizing: border-box;
+    float: left;
+    width: 10%;
+    height: 10%;
+}
+
+.game-field__star_type-0 {
+    background-color: #ADFF2F;
+}
+
+.game-field__star.game-field__star_type-0 {
+    border: none;
+}
+.game-field__star_type-0 {
+    background-color: #fff;
+}
+
+
+.game-field__star_type-1 {
+    background-color: #FA8072;
+}
+.game-field__star_type-2 {
+    background-color: #FF69B4;
+}
+.game-field__star_type-3 {
+    background-color: #20B2AA;
+}
+.game-field__star_type-4 {
+    background-color: #0000FF;
+}
+.game-field__star_type-5 {
+    background-color: #8B0000;
+}
+.game-field__star_type-6 {
+    background-color: #ff356d;
+}
+
+.game-field__star_selected {
+    border: solid #fff 2px;
+}
+
+.score {
+    padding: 10px;
+}
