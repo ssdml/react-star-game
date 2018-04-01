@@ -1,4 +1,6 @@
 .game-field {
+    box-sizing: content-box;
+    border: solid 1px #555555;
     width: 600px;
     height: 600px;
 }
