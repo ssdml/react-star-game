@@ -8,6 +8,7 @@
     float: left;
     width: 10%;
     height: 10%;
+    transition-duration: 0.3;
 }
 
 .game-field__star_type-0 {

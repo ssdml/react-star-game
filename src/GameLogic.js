@@ -41,13 +41,21 @@ class GameLogic {
         this.addPoints(pointsCounter);
 
         let stars = this.stars.slice();
-        this.shiftDown();
-        this.shiftRight();
+        stars = this.shiftDown(stars);
+
+        let alternateStars = [];
+        for (let cols = 0; cols < this.numColomns; cols++) {
+            for (let rows = this.numColomns - 1; rows >= 0; rows--) {
+                console.log(rows * this.numColomns + cols);
+                alternateStars.push(stars[rows * this.numColomns + cols]);
+            }
+        }
+        alternateStars = this.shiftDown(alternateStars)
     }
 
-    shiftDown() {
-        for (let i = this.stars.length - 1; i >= 0; i--) {
-            if (this.stars[i].color !== 0) {
+    shiftDown(stars) {
+        for (let i = stars.length - 1; i >= 0; i--) {
+            if (stars[i].color !== 0) {
                 continue;
             }
             let rowsUp = 1;
@@ -56,37 +64,28 @@ class GameLogic {
                 if (currentIndex < 0) {
                     break;
                 }
-                if (this.stars[currentIndex].color !== 0) {
-                    this.stars[i].color = this.stars[currentIndex].color;
-                    this.stars[currentIndex].color = 0;
+                if (stars[currentIndex].color !== 0) {
+                    stars[i].color = stars[currentIndex].color;
+                    stars[currentIndex].color = 0;
                     break;
                 }
                 rowsUp++;
             }
-            if (this.stars[i].color === 0 && i - this.numColomns >= 0) {
-                this.stars[i].color = this.stars[i - this.numColomns].color;
-                this.stars[i - this.numColomns].color = 0;
+            if (stars[i].color === 0 && i - this.numColomns >= 0) {
+                stars[i].color = stars[i - this.numColomns].color;
+                stars[i - this.numColomns].color = 0;
             }
         }
+        return stars;
     }
 
-    shiftRight() {
-        for (let i = 0; i < this.numColomns; i++) {
-            if (this.isEmptyColomn(i)) {
-                // while () {
-
-                // }
-            }
-        }
-    }
-
-    isEmptyColomn(colNum) {
-        let empty = false;
-        for (let i = 0; i < this.numColomns; i++) {
-            empty = empty || (this.stars[colNum + i * this.numColomns].color > 0);
-        }
-        return !empty;
-    }
+    // isEmptyColomn(colNum) {
+    //     let empty = false;
+    //     for (let i = 0; i < this.numColomns; i++) {
+    //         empty = empty || (this.stars[colNum + i * this.numColomns].color > 0);
+    //     }
+    //     return !empty;
+    // }
 
     selectStars(id) {
         if (this.stars[id].color === 0) {
