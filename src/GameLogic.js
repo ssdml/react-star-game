@@ -15,7 +15,8 @@ class GameLogic {
         }
     }
     getStars() {
-        return this.stars;
+        const stars = [...this.stars];
+        return stars;
     }
     getPoints() {
         return this.points;
