@@ -1,4 +1,5 @@
 {
+  "homepage" : "http://ssdml.github.io/react-star-game",
   "name": "react-stars-game",
   "version": "0.1.0",
   "private": true,
