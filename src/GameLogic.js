@@ -9,7 +9,6 @@ class GameLogic {
             this.stars.push({
                 key: i,
                 color: Math.round(Math.random() * 5 + 1),
-                // color: Math.round(Math.random() * 2 + 1),
                 selected: false,
             });
         }
@@ -79,14 +78,6 @@ class GameLogic {
         }
         return stars;
     }
-
-    // isEmptyColomn(colNum) {
-    //     let empty = false;
-    //     for (let i = 0; i < this.numColomns; i++) {
-    //         empty = empty || (this.stars[colNum + i * this.numColomns].color > 0);
-    //     }
-    //     return !empty;
-    // }
 
     selectStars(id) {
         if (this.stars[id].color === 0) {
